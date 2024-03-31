@@ -6,89 +6,52 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 13:25:03 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/03/21 10:40:38 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/03/31 01:58:40 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sa(mystack *s, int size)
+void swap_stack(stack *s)
 {
-	Node *new;
-	int tmp;
-
-	if (size < 2)
-		return;
-	else
-	{
-		new = s->top;
-		tmp = new->data;
-		new->data = new->next->data;
-		new->next->data = tmp;
-	}
+	int  tmp;
+	tmp = s->data;
+	s->data = s->next->data;
+	s->next->data = tmp;
 }
 
-void sb(mystack *s, int size)
+void swap_same_time(stack *s1, stack *s2)
 {
-	Node *new;
-	int tmp;
-
-	if (size < 2)
-		return;
-	else
-	{
-		new = s->top;
-		tmp = new->data;
-		new->data = new->next->data;
-		new->next->data = tmp;
-	}
+	swap_stack(s1);
+	swap_stack(s2);
 }
-void ss(mystack *s1, mystack *s2, int size1, int size2)
+void push_stack(stack **s1,stack **s2)
 {
-	Node *new;
-	int tmp;
-
-	if (size1 < 2 || size2 < 2)
-		return;
-	else
-	{
-		new = s1->top;
-		tmp = new->data;
-		new->data = new->next->data;
-		new->next->data = tmp;
-
-		new = s2->top;
-		tmp = new->data;
-		new->data = new->next->data;
-		new->next->data = tmp;
-	}
+	stack *tmp;
+	tmp = *s1;
+	*s1 = (*s1)->next;
+	tmp->next = *s2;
+	*s2 = tmp;
 }
 
-void pa(mystack *a, mystack *b)
+void rotate_stack(stack **s1)
 {
-	Node *newtop;
+	stack *tmp;
+	stack *h;
 	
-	if(isEmpty(b))
-		return;
-	else
-	{
-		newtop = b->top;
-		b->top--;
-		newtop->next = a->top;
-		a->top = newtop;
-	}
-}
-
-void ra(mystack *s)
-{
-	Node *newnode;
+	tmp = *s1;
 	
-	newnode = s->top;
-	//s->top++;
-	while (newnode != NULL)
+	*s1 = (*s1)->next;
+	tmp->next = NULL;
+	h = *s1;
+	while (h->next != NULL)
 	{
-		newnode = newnode->next;
+		h = h->next; 
 	}
-	// newnode = s->top;
-	 //s->top = newnode;
+	h->next = tmp;
+}
+void rotate_same_time(stack *s1,stack *s2)
+{
+	rotate_stack(&s1);
+	rotate_stack(&s2);
 }

@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:54:48 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/03/21 10:40:44 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/03/31 01:58:49 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,37 +16,20 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-// typedef struct
-// {
-//    int sommet;
-//    int size;
-//    int *stack;
-// }mystack;
-
-typedef struct Node
+typedef struct stack
 {
-   int data;
-   struct Node *next;
-}Node;
+	int data;
+	struct stack *next;
+}stack;
 
-typedef struct mystack
-{
-   Node *top;
-   int size;
-}mystack;
+stack *push(stack *s, int v);
+stack *pop(stack *s);
+int size(stack *s);
 
 
-
-int isEmpty(mystack *s);
-void push(mystack *s, int v);
-int pop(mystack *s);
-int size(mystack s);
-mystack *create_stack(unsigned int capacity);
-
-
-void sa(mystack *s, int size);
-void sb(mystack *s, int size);
-void ss(mystack *s1, mystack *s2, int size1, int size2);
-void pa(mystack *a, mystack *b);
-void ra(mystack *s);
+void swap_stack(stack *s);
+void swap_same_time(stack *s1, stack *s2);
+void push_stack(stack **s1,stack **s2);
+void rotate_stack(stack **s1);
+void rotate_same_time(stack *s1,stack *s2);
 #endif
