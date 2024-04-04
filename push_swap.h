@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:54:48 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/02 00:58:39 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/03 01:38:15 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ t_stack	*push(t_stack *s, int v);
 t_stack	*pop(t_stack *s);
 int		size(t_stack *s);
 
-void	swap_t_stack(t_stack *s);
+void	swap_stack(t_stack *s);
 void	swap_same_time(t_stack *s1, t_stack *s2);
-void	push_t_stack(t_stack **s1, t_stack **s2);
-void	rotate_t_stack(t_stack **s1);
+void	push_stack(t_stack **s1, t_stack **s2);
+void	rotate_stack(t_stack **s1);
 void	rotate_same_time(t_stack **s1, t_stack **s2);
+void	rotate_invers_stack(t_stack **s1);
 
 int		ft_check_arg(int c, char **v);
 char	*arg_join(int c, char **v);
