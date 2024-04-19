@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 13:25:03 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/03 03:55:42 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:41:20 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,26 +59,56 @@ void	rotate_same_time(t_stack **s1, t_stack **s2)
 	rotate_stack(s2);
 }
 
+// void	rotate_invers_stack(t_stack **s1)
+// {
+// 	t_stack	*tmp;
+// 	t_stack	*h;
+
+// 	tmp = *s1;
+// 	while ((*s1)->next != NULL)
+// 	{
+// 		h = *s1;
+// 		*s1 = (*s1)->next;
+// 	}
+// 	//printf("%d \n ",(*s1)->data);
+// 	(*s1)->next = tmp;
+// 	h->next = NULL;
+	
+// 	//*s1 = tmp;
+// // 	while (*s1 != NULL)
+// // 	{
+// // 		printf(" valeur = %d \n",(*s1)->data);
+
+// // 		*s1 = (*s1)->next;
+// // 	}
+// }
 
 
 
-void	rotate_invers_stack(t_stack **s1)
+void rotate_invers_stack(t_stack **s1)
 {
-	t_stack	*tmp;
-	t_stack	*h;
-
+	t_stack *tmp;
+	t_stack *h;
 	tmp = *s1;
-	while ((*s1)->next != NULL)
+	while (tmp->next->next)
 	{
-		h = *s1;
-		*s1 = (*s1)->next;
+		tmp = tmp->next;
 	}
-	(*s1)->next = tmp;
-	h->next = NULL;
-	while (*s1 != NULL)
-	{
-		printf(" valeur = %d \n",(*s1)->data);
-
-		*s1 = (*s1)->next;
-	}
+	h = tmp->next;
+	tmp->next = NULL;
+	h->next = *s1;
+	*s1 = h;
 }
+
+// t_list *tmp;
+// t_list *hold;
+
+// if (*stack_a == NULL || (*stack_a)->next == NULL)
+// return ;
+// tmp = (*stack_a);
+// while (tmp->next->next)
+// tmp = tmp->next;
+// hold = tmp->next;
+// tmp->next = NULL;
+// hold->next = *stack_a;
+// (*stack_a) = hold;

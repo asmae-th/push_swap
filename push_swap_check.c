@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:53:06 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/02 01:09:18 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:42:31 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,33 @@ char	*arg_join(int c, char **v)
 		i++;
 	}
 	return (tmp);
+}
+
+
+int ft_check_sort(t_stack *a)
+{
+	t_stack *h;
+	h = a;
+	while(h->next != NULL)
+	{
+		if (h->data > h->next->data)
+			h = h->next;
+		else
+			return (1);
+	}
+	return (0);
+}
+
+int check_spce(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		if(s[i] >= 48 && s[i] <= 57)
+			return (0);
+		i++;
+	}
+	return (1);
 }

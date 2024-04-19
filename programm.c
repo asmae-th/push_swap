@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:50:44 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/02 03:50:41 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/19 12:46:06 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,22 @@
 int	main(int ac, char *av[])
 {
 	t_stack	*a;
+	t_stack	*b;
 	int		i;
 	char	*s;
 	char	**ptr;
 	long	nb;
 
 	i = 0;
-	if (ft_check_arg(ac, av) == 0)
+	b = NULL;
+	if (ft_check_arg(ac, av) == 0 && ac >= 2)
 	{
 		s = arg_join(ac, av);
+		if(check_spce(s))
+			{
+				write(1, "Error\n", 6);
+				exit(0);
+			}
 		ptr = ft_split(s, ' ');
 		while (ptr[i])
 		{
@@ -46,11 +53,31 @@ int	main(int ac, char *av[])
 			a = push(a, i);
 			ptr++;
 		}
+	//push_stack(&a, &b);
+	//printf("yessss");
+		ft_sort(&a, &b);
+		//ft_sort_three(&a);
+		//rotate_invers_stack(&a);
+		//printf("--- %d -----------\n",plus_petit(a));
+		//push_stack(&a, &b);
 		while (a)
 		{
 			printf("%d\n", a->data);
 			a = a->next;
 		}
+		printf("--- mmm-----------\n");
+		// if(b == NULL)
+		// 	printf("nuull");
+		// while (b)
+		// {
+		// 	printf("%d\n", b->data);
+		// 	b = b->next;
+		// }
+		// if(ft_check_sort(a) == 0)
+		// 	printf("ok");
+		// else
+		// 	printf("ko");
+		//printf("min = %d",plus_petit(&a));
 	}
 	else
 		write (1, "Error\n", 6);

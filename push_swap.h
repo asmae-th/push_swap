@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:54:48 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/03 01:38:15 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/19 12:21:46 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct t_stack
 
 t_stack	*push(t_stack *s, int v);
 t_stack	*pop(t_stack *s);
-int		size(t_stack *s);
+int		size(t_stack **s);
 
 void	swap_stack(t_stack *s);
 void	swap_same_time(t_stack *s1, t_stack *s2);
@@ -37,6 +37,8 @@ void	rotate_invers_stack(t_stack **s1);
 
 int		ft_check_arg(int c, char **v);
 char	*arg_join(int c, char **v);
+int		ft_check_sort(t_stack *a);
+int check_spce(char *s);
 
 int		ft_strlen(char *s);
 char	*ft_strdup(char *s);
@@ -46,4 +48,9 @@ char	*ft_substr(char *s, int start, int len);
 char	**ft_split(char *s, char c);
 long	ft_atoi(char *str);
 
+int plus_petit(t_stack *a);
+void ft_sort_too(t_stack *a);
+void ft_sort_three(t_stack **a);
+void ft_sort_five(t_stack **a, t_stack **b);
+void ft_sort(t_stack **a, t_stack **b);
 #endif

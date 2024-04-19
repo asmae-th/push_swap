@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 13:32:04 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/02 01:10:59 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:16:36 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,17 @@ t_stack	*pop(t_stack *s)
 	return ((s->next--));
 }
 
-int	size(t_stack *s)
+int	size(t_stack **s)
 {
 	int	i;
-
+	t_stack *help;
+	
+	help = *s;
 	i = 0;
-	while (s != NULL)
+	while (help != NULL)
 	{
 		i++;
-		s = s->next;
+		help = help->next;
 	}
 	return (i);
 }
