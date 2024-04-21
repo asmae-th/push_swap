@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:53:06 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/17 13:42:31 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/21 22:49:25 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,3 +79,22 @@ int check_spce(char *s)
 	}
 	return (1);
 }
+
+int ft_dup(t_stack **a, int nb)
+{
+	t_stack *tmp;
+	tmp = *a;
+
+	while (tmp != NULL)
+	{
+		if(tmp->data == nb)
+			return(1);
+		tmp = tmp->next;
+	}
+    return 0;
+}
+
+// int ft_check_plus_moin(char **s)
+// {
+	
+// }

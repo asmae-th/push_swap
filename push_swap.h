@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:54:48 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/19 12:21:46 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/21 23:09:16 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ int		ft_check_arg(int c, char **v);
 char	*arg_join(int c, char **v);
 int		ft_check_sort(t_stack *a);
 int check_spce(char *s);
+int ft_dup(t_stack **a, int nb);
 
 int		ft_strlen(char *s);
+int	ft_strcmp(char *s1, char *s2);
 char	*ft_strdup(char *s);
 char	*ft_strjoin(char *s1, char *s2);
 void	*ft_memcpy(void *dst, void *src, int n);
@@ -53,4 +55,11 @@ void ft_sort_too(t_stack *a);
 void ft_sort_three(t_stack **a);
 void ft_sort_five(t_stack **a, t_stack **b);
 void ft_sort(t_stack **a, t_stack **b);
+
+
+int *ft_copy(t_stack **a);
+void ft_sort_tab(int *t, int n);
+
+
+void	sa(t_stack *s);
 #endif

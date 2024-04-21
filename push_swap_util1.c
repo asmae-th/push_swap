@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:58:25 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/02 01:18:17 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/21 22:16:24 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,16 @@ int	ft_strlen(char *s)
 		i++;
 	}
 	return (i);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+		i++;
+	return (s1[i] - s2[i]);
 }
 
 char	*ft_strdup(char *s)
@@ -96,6 +106,17 @@ long	ft_atoi(char *str)
 	{
 		reslt = reslt * 10 + str[i] - '0';
 		i++;
+	}
+
+	if (str[i] != '\0')
+	{
+		printf("error");
+		exit(1);
+	}
+	if (str[i] == '\0' && (str[i - 1] < '0' || str[i -1] > '9'))
+	{
+		printf("error");
+		exit(1);
 	}
 	return (reslt * sing);
 }

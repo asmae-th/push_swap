@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 00:39:49 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/19 12:59:12 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/21 23:09:01 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int plus_petit(t_stack *a)
 void ft_sort_too(t_stack *a)
 {  
     if(a->data > a->next->data)
-        swap_stack(a);
+        sa(a);
 }
 
 void ft_sort_three(t_stack **a)

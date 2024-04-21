@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 13:25:03 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/18 21:41:20 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/21 23:04:00 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	swap_stack(t_stack *s)
 	tmp = s->data;
 	s->data = s->next->data;
 	s->next->data = tmp;
+	printf("pa");
 }
 
 void	swap_same_time(t_stack *s1, t_stack *s2)

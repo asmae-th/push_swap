@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:50:44 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/19 12:46:06 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/21 23:04:40 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(int ac, char *av[])
 	char	*s;
 	char	**ptr;
 	long	nb;
+	//int	*tab;
 
 	i = 0;
 	b = NULL;
@@ -32,15 +33,15 @@ int	main(int ac, char *av[])
 				exit(0);
 			}
 		ptr = ft_split(s, ' ');
-		while (ptr[i])
-		{
-			if (ft_strlen(ptr[i]) > 11)
-			{
-				write(1, "Error\n", 6);
-				exit(0);
-			}
-			i++;
-		}
+		// while (ptr[i])
+		// {
+		// 	if (ft_strlen(ptr[i]) > 11)
+		// 	{
+		// 		write(1, "Error\n", 6);
+		// 		exit(0);
+		// 	}
+		// 	i++;
+		// }
 		while (*ptr)
 		{
 			nb = ft_atoi(*ptr);
@@ -50,12 +51,34 @@ int	main(int ac, char *av[])
 				exit(0);
 			}
 			i = nb;
+		if(ft_dup(&a, nb) == 1)
+		{
+			write(1, "Error\n", 6);
+				exit(0);
+		}
 			a = push(a, i);
 			ptr++;
 		}
+		ft_sort_too(a);
+		// tab = ft_copy(&a);
+		
+		// while (i < 6)
+		// {
+		// 	printf("%d  \n",tab[i]);
+		// 	i++;
+		// }
+		// ft_sort_tab(tab,6);
+		// printf("--- mmm-----------\n");
+		// int i = 0;
+		// while (i < 6)
+		// {
+		// 	printf("%d  \n",tab[i]);
+		// 	i++;
+		// }
+		
 	//push_stack(&a, &b);
 	//printf("yessss");
-		ft_sort(&a, &b);
+		//ft_sort(&a, &b);
 		//ft_sort_three(&a);
 		//rotate_invers_stack(&a);
 		//printf("--- %d -----------\n",plus_petit(a));
@@ -65,7 +88,7 @@ int	main(int ac, char *av[])
 			printf("%d\n", a->data);
 			a = a->next;
 		}
-		printf("--- mmm-----------\n");
+		//
 		// if(b == NULL)
 		// 	printf("nuull");
 		// while (b)
