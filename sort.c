@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asmae <asmae@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 00:39:49 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/21 23:09:01 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:57:09 by asmae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,27 @@ int plus_petit(t_stack *a)
 void ft_sort_too(t_stack *a)
 {  
     if(a->data > a->next->data)
-        sa(a);
+        sa(a, 0);
 }
 
 void ft_sort_three(t_stack **a)
 {
     if((*a)->next->data < (*a)->data && (*a)->data < (*a)->next->next->data)
-        swap_stack(*a);
+        sa(*a, 0);
     if((*a)->data > (*a)->next->data && (*a)->next->data > (*a)->next->next->data)
     {
-        swap_stack(*a);
-        rotate_invers_stack(a);
+        sa(*a, 0);
+        rra(a, 0);
     }
     if((*a)->next->data < (*a)->next->next->data && (*a)->next->next->data < (*a)->data )
-        rotate_stack(a);
+        ra(a, 0);
     if((*a)->data < (*a)->next->next->data && (*a)->next->next->data < (*a)->next->data )
     {
-        swap_stack(*a);
-        rotate_stack(a);
+        sa(*a, 0);
+        ra(a, 0);
     }
     if((*a)->next->data < (*a)->data && (*a)->data < (*a)->next->data)
-        rotate_invers_stack(a);
+        rra(a, 0);
 }
 
 void ft_sort_five(t_stack **a, t_stack **b)
@@ -64,16 +64,16 @@ void ft_sort_five(t_stack **a, t_stack **b)
         if ((*a)->data == plus_petit(*a))
         {
             //printf("    1 %p   \n",b);
-            push_stack(a, b);
+            pb(a, b);
             //printf("yessss\n");
         }
         else
-            rotate_stack(a);
+            ra(a, 0);
     }
     
     ft_sort_three(a);
-    push_stack(b, a);
-    push_stack(b, a);
+    pa(b, a);
+    pa(b, a);
 }
 
 
@@ -117,12 +117,12 @@ void ft_sort(t_stack **a, t_stack **b)
         while (*a != NULL) {
             if ((*a)->data == tmp)
             {
-                push_stack(a, b);
+                pb(a, b);
                 break;
             }
             else
             {
-                rotate_stack(a);
+                ra(a ,0);
                 break; 
             }
         }
@@ -135,7 +135,7 @@ void ft_sort(t_stack **a, t_stack **b)
     
         while (*b != NULL)
         {
-           push_stack(b, a);
+           pa(b, a);
         }
         
         // while (*a)

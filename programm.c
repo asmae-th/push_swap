@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   programm.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asmae <asmae@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:50:44 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/21 23:04:40 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/22 18:35:23 by asmae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int ac, char *av[])
 {
 	t_stack	*a;
-	t_stack	*b;
+	//t_stack	*b;
 	int		i;
 	char	*s;
 	char	**ptr;
@@ -23,7 +23,7 @@ int	main(int ac, char *av[])
 	//int	*tab;
 
 	i = 0;
-	b = NULL;
+	//b = NULL;
 	if (ft_check_arg(ac, av) == 0 && ac >= 2)
 	{
 		s = arg_join(ac, av);
@@ -59,7 +59,7 @@ int	main(int ac, char *av[])
 			a = push(a, i);
 			ptr++;
 		}
-		ft_sort_too(a);
+		//ft_sort(&a,&b);
 		// tab = ft_copy(&a);
 		
 		// while (i < 6)
