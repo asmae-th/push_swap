@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   programm.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asmae <asmae@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:50:44 by atahtouh          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/04/24 12:28:43 by atahtouh         ###   ########.fr       */
+=======
+/*   Updated: 2024/04/22 18:35:23 by asmae            ###   ########.fr       */
+>>>>>>> 7e79611e388556f6472f811e42940cd0198fb352
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +19,7 @@
 int	main(int ac, char *av[])
 {
 	t_stack	*a;
-	t_stack	*b;
+	//t_stack	*b;
 	int		i;
 	char	*s;
 	char	**ptr;
@@ -23,9 +27,14 @@ int	main(int ac, char *av[])
 	int		sz;
 	int	*tab;
 
+<<<<<<< HEAD
 	
 	sz = 0;
 	b = NULL;
+=======
+	i = 0;
+	//b = NULL;
+>>>>>>> 7e79611e388556f6472f811e42940cd0198fb352
 	if (ft_check_arg(ac, av) == 0 && ac >= 2)
 	{
 		s = arg_join(ac, av);
@@ -53,6 +62,7 @@ int	main(int ac, char *av[])
 			a = push(a, i);
 			sz--;
 		}
+<<<<<<< HEAD
 		//ft_sort_five(&a,&b);
 		//ft_sort(&a,&b);
 		 tab = ft_copy(&a);
@@ -65,6 +75,16 @@ int	main(int ac, char *av[])
 			i++;
 		}
 		ft_push(&a, &b, tab);
+=======
+		//ft_sort(&a,&b);
+		// tab = ft_copy(&a);
+		
+		// while (i < 6)
+		// {
+		// 	printf("%d  \n",tab[i]);
+		// 	i++;
+		// }
+>>>>>>> 7e79611e388556f6472f811e42940cd0198fb352
 		// ft_sort_tab(tab,6);
 		// printf("--- mmm-----------\n");
 		// int i = 0;

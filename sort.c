@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asmae <asmae@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 00:39:49 by atahtouh          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/04/23 10:48:39 by atahtouh         ###   ########.fr       */
+=======
+/*   Updated: 2024/04/22 13:57:09 by asmae            ###   ########.fr       */
+>>>>>>> 7e79611e388556f6472f811e42940cd0198fb352
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +55,11 @@ void ft_sort_three(t_stack **a)
         sa(*a, 0);
         ra(a, 0);
     }
+<<<<<<< HEAD
     if(((*a)->data < (*a)->next->data) && (*a)->next->next->data < (*a)->data )
+=======
+    if((*a)->next->data < (*a)->data && (*a)->data < (*a)->next->data)
+>>>>>>> 7e79611e388556f6472f811e42940cd0198fb352
         rra(a, 0);
 }
 
@@ -60,7 +68,15 @@ void ft_sort_five(t_stack **a, t_stack **b)
     while (size(a) > 3)
     {
         if ((*a)->data == plus_petit(*a))
+<<<<<<< HEAD
             pb(a, b);
+=======
+        {
+            //printf("    1 %p   \n",b);
+            pb(a, b);
+            //printf("yessss\n");
+        }
+>>>>>>> 7e79611e388556f6472f811e42940cd0198fb352
         else
             ra(a, 0);
     }
