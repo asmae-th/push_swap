@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:58:25 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/21 22:16:24 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/23 10:10:13 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,12 @@ long	ft_atoi(char *str)
 	int		i;
 	long	reslt;
 	int		sing;
+	int		tmp;
 
 	sing = 1;
 	reslt = 0;
 	i = 0;
+	tmp = 0;
 	while ((str[i] == 32 || (str[i] >= 9 && str[i] <= 13)) && str[i] != '\0')
 		i++;
 	if (str[i] == 43 || str[i] == 45)
@@ -107,15 +109,9 @@ long	ft_atoi(char *str)
 		reslt = reslt * 10 + str[i] - '0';
 		i++;
 	}
-
-	if (str[i] != '\0')
+	if (str[i] != '\0' || (tmp == ft_strlen(str)))
 	{
-		printf("error");
-		exit(1);
-	}
-	if (str[i] == '\0' && (str[i - 1] < '0' || str[i -1] > '9'))
-	{
-		printf("error");
+		write(1, "error\n",6);
 		exit(1);
 	}
 	return (reslt * sing);

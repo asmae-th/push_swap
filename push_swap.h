@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:54:48 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/21 23:09:16 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:58:01 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ char	*arg_join(int c, char **v);
 int		ft_check_sort(t_stack *a);
 int check_spce(char *s);
 int ft_dup(t_stack **a, int nb);
+int ft_size_tab(char **ptr);
 
 int		ft_strlen(char *s);
 int	ft_strcmp(char *s1, char *s2);
@@ -59,7 +60,20 @@ void ft_sort(t_stack **a, t_stack **b);
 
 int *ft_copy(t_stack **a);
 void ft_sort_tab(int *t, int n);
+int size_tab(int *t);
+void    ft_push_b(t_stack **b,t_stack **a, int mid1);
+void    ft_push(t_stack **a, t_stack **b, int *t);
 
 
-void	sa(t_stack *s);
+void	sa(t_stack *s, int n);
+void	sb(t_stack *s, int n);
+void	ss(t_stack *s1, t_stack *s2,int n);
+void	pa(t_stack **s1, t_stack **s2);
+void	pb(t_stack **s1, t_stack **s2);
+void	ra(t_stack **s1, int n);
+void	rb(t_stack **s1, int n);
+void	rr(t_stack **s1, t_stack **s2, int n);
+void	rra(t_stack **s1, int n);
+void	rrb(t_stack **s1, int n);
+void	rrr(t_stack **s1, t_stack **s2, int n);
 #endif

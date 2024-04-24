@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:50:44 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/21 23:04:40 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:28:43 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ int	main(int ac, char *av[])
 	char	*s;
 	char	**ptr;
 	long	nb;
-	//int	*tab;
+	int		sz;
+	int	*tab;
 
-	i = 0;
+	
+	sz = 0;
 	b = NULL;
 	if (ft_check_arg(ac, av) == 0 && ac >= 2)
 	{
@@ -33,40 +35,36 @@ int	main(int ac, char *av[])
 				exit(0);
 			}
 		ptr = ft_split(s, ' ');
-		// while (ptr[i])
-		// {
-		// 	if (ft_strlen(ptr[i]) > 11)
-		// 	{
-		// 		write(1, "Error\n", 6);
-		// 		exit(0);
-		// 	}
-		// 	i++;
-		// }
-		while (*ptr)
+		sz = ft_size_tab(ptr) - 1;
+		while (sz >= 0)
 		{
-			nb = ft_atoi(*ptr);
+			nb = ft_atoi(ptr[sz]);
 			if (nb > 2147483647 || nb < -2147483648)
 			{
 				write(1, "Error\n", 6);
 				exit(0);
 			}
 			i = nb;
-		if(ft_dup(&a, nb) == 1)
-		{
-			write(1, "Error\n", 6);
-				exit(0);
-		}
+			if(ft_dup(&a, i) == 1)
+			{
+				write(1, "Error\n", 6);
+					exit(0);
+			}
 			a = push(a, i);
-			ptr++;
+			sz--;
 		}
-		ft_sort_too(a);
-		// tab = ft_copy(&a);
-		
-		// while (i < 6)
-		// {
-		// 	printf("%d  \n",tab[i]);
-		// 	i++;
-		// }
+		//ft_sort_five(&a,&b);
+		//ft_sort(&a,&b);
+		 tab = ft_copy(&a);
+		 ft_sort_tab(tab, size_tab(tab));
+		// printf("%d  \n",size_tab(tab));
+		 i = 0;
+		while (i < size_tab(tab))
+		{
+			printf("%d  \n",tab[i]);
+			i++;
+		}
+		ft_push(&a, &b, tab);
 		// ft_sort_tab(tab,6);
 		// printf("--- mmm-----------\n");
 		// int i = 0;
@@ -77,25 +75,26 @@ int	main(int ac, char *av[])
 		// }
 		
 	//push_stack(&a, &b);
-	//printf("yessss");
+	//printf("yessss\n");
 		//ft_sort(&a, &b);
 		//ft_sort_three(&a);
 		//rotate_invers_stack(&a);
 		//printf("--- %d -----------\n",plus_petit(a));
 		//push_stack(&a, &b);
-		while (a)
-		{
-			printf("%d\n", a->data);
-			a = a->next;
-		}
-		//
+		
+		// while (a)
+		// {
+		// 	printf("a = %d\n", a->data);
+		// 	a = a->next; 
+		// }
+		
 		// if(b == NULL)
 		// 	printf("nuull");
-		// while (b)
-		// {
-		// 	printf("%d\n", b->data);
-		// 	b = b->next;
-		// }
+		while (b)
+		{
+			printf("data = %d\n", b->data);
+			b = b->next;
+		}
 		// if(ft_check_sort(a) == 0)
 		// 	printf("ok");
 		// else

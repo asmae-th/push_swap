@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:53:06 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/21 22:49:25 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/23 09:36:49 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,14 @@ int ft_dup(t_stack **a, int nb)
     return 0;
 }
 
-// int ft_check_plus_moin(char **s)
-// {
+int ft_size_tab(char **ptr)
+{
+	int i;
 	
-// }
+	i = 0;
+	while (ptr[i] != NULL)
+	{
+		i++;
+	}
+	return (i);
+}
