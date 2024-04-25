@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_util2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asmae <asmae@student.42.fr>                +#+  +:+       +#+        */
+/*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 01:16:52 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/22 13:44:38 by asmae            ###   ########.fr       */
+/*   Updated: 2024/04/25 19:32:37 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,7 @@ void	*ft_memcpy(void *dst, void *src, int n)
 char	*ft_substr(char *s, int start, int len)
 {
 	char	*substr;
-	// size_t	i;
 
-	// i = 0;
 	if (!s)
 		return (NULL);
 	if (start > ft_strlen(s))

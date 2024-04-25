@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,20 +6,18 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:49:38 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/23 10:49:40 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:41:40 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-=======
->>>>>>> 7e79611e388556f6472f811e42940cd0198fb352
 #include "push_swap.h"
 
-void rra(t_stack **s1, int n)
+void	rra(t_stack **s1, int n)
 {
-	t_stack *tmp;
-	t_stack *h;
+	t_stack	*tmp;
+	t_stack	*h;
 
-    if (*s1 == NULL || (*s1)->next == NULL)
+	if (*s1 == NULL || (*s1)->next == NULL)
 		return ;
 	tmp = *s1;
 	while (tmp->next->next)
@@ -31,16 +28,16 @@ void rra(t_stack **s1, int n)
 	tmp->next = NULL;
 	h->next = *s1;
 	*s1 = h;
-    if (n == 0)
+	if (n == 0)
 		write(1, "rra\n", 4);
 }
 
-void rrb(t_stack **s1, int n)
+void	rrb(t_stack **s1, int n)
 {
-	t_stack *tmp;
-	t_stack *h;
+	t_stack	*tmp;
+	t_stack	*h;
 
-    if (*s1 == NULL || (*s1)->next == NULL)
+	if (*s1 == NULL || (*s1)->next == NULL)
 		return ;
 	tmp = *s1;
 	while (tmp->next->next)
@@ -51,10 +48,9 @@ void rrb(t_stack **s1, int n)
 	tmp->next = NULL;
 	h->next = *s1;
 	*s1 = h;
-    if (n == 0)
+	if (n == 0)
 		write(1, "rrb\n", 4);
 }
-
 
 void	rrr(t_stack **s1, t_stack **s2, int n)
 {

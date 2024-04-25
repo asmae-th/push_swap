@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 13:32:04 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/18 15:16:36 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:33:52 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ t_stack	*pop(t_stack *s)
 
 int	size(t_stack **s)
 {
-	int	i;
-	t_stack *help;
-	
+	int		i;
+	t_stack	*help;
+
 	help = *s;
 	i = 0;
 	while (help != NULL)
@@ -56,4 +56,22 @@ int	size(t_stack **s)
 		help = help->next;
 	}
 	return (i);
+}
+
+int	ft_size_tab(char **ptr)
+{
+	int	i;
+
+	i = 0;
+	while (ptr[i] != NULL)
+	{
+		i++;
+	}
+	return (i);
+}
+
+void	ft_exit(void)
+{
+	write (1, "error4\n", 6);
+	exit (1);
 }

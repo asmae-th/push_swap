@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:58:25 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/23 10:10:13 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/25 22:31:42 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_strlen(char *s)
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
@@ -85,10 +85,10 @@ char	*ft_strjoin(char *s1, char *s2)
 
 long	ft_atoi(char *str)
 {
-	int		i;
-	long	reslt;
-	int		sing;
-	int		tmp;
+	int			i;
+	long long	reslt;
+	int			sing;
+	int			tmp;
 
 	sing = 1;
 	reslt = 0;
@@ -99,10 +99,9 @@ long	ft_atoi(char *str)
 	if (str[i] == 43 || str[i] == 45)
 	{
 		if (str[i] == 45)
-		{
 			sing = -sing;
-		}
 		i++;
+		tmp++;
 	}
 	while (str[i] != '\0' && str[i] >= 48 && str[i] <= 57)
 	{
@@ -110,9 +109,6 @@ long	ft_atoi(char *str)
 		i++;
 	}
 	if (str[i] != '\0' || (tmp == ft_strlen(str)))
-	{
-		write(1, "error\n",6);
-		exit(1);
-	}
+		ft_exit();
 	return (reslt * sing);
 }
