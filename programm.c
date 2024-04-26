@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:50:44 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/25 22:51:26 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/26 20:35:42 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ void	ft_sort(t_stack **a, t_stack **b, int size)
 		ft_sort_three(a);
 	if (size == 5)
 		ft_sort_five(a, b);
-	if (size > 5)
+	if (size > 5 && size <= 100)
 		ft_sort_100(a, b, size);
+	if (size > 100)
+		ft_sort_500(a, b, size);
 }
 int	main(int ac, char *av[])
 {
@@ -59,14 +61,14 @@ int	main(int ac, char *av[])
 		ptr = ft_split(s, ' ');
 		ft_push_stack(&a, ptr);
 		ft_sort(&a, &b, size(&a));
-		while (a)
-		{
-			printf("a = %d\n", a->data);
-			a = a->next; 
-		}
+		// while (a)
+		// {
+		// 	printf("a = %d\n", a->data);
+		// 	a = a->next; 
+		// }
 	}
 	else
-		write (1, "Error0\n", 6);
+		ft_exit();
 	return (0);
 }
 		

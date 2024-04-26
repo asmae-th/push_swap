@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:54:48 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/25 22:52:31 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/26 20:31:44 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct t_stack
 
 void	ft_push_stack(t_stack **a, char **ptr);
 void	ft_sort(t_stack **a, t_stack **b, int size);
-int		main(int ac, char *av[]);
+//int		main(int ac, char *av[]);
 
 t_stack	*push(t_stack *s, int v);
 t_stack	*pop(t_stack *s);
@@ -63,6 +63,8 @@ int		move_100(int i_tab, int count, t_stack **a, t_stack **b);
 int		plus_grand(t_stack *a);
 int		ft_cherche_i_max(t_stack **b, int v);
 void	ft_push_b_to_a(t_stack **a, t_stack **b, int size);
+void	ft_sort_500(t_stack **a, t_stack **b, int size);
+int		move_500(int i_tab, int count, t_stack **a, t_stack **b);
 
 void	sa(t_stack *s, int n);
 void	sb(t_stack *s, int n);

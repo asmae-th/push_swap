@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/03 00:39:49 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/25 19:48:52 by atahtouh         ###   ########.fr       */
+/*   Created: 2024/04/26 20:32:24 by atahtouh          #+#    #+#             */
+/*   Updated: 2024/04/26 20:32:27 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,69 +73,3 @@ void	ft_sort_five(t_stack **a, t_stack **b)
 	pa(b, a);
 	pa(b, a);
 }
-
-// void ft_sort(t_stack **a, t_stack **b)
-// {
-//     int tmp;
-
-//     while (*a)
-//     {
-//         tmp = plus_petit(*a);
-//         while (*a)
-//         {
-//             if((*a)->data == tmp)
-//                 push_stack(a, b);
-//             else
-//                 rotate_stack(a);
-//         }
-//     }
-// }
-
-// void ft_sort(t_stack **a, t_stack **b) {
-//     int tmp;
-
-//     while (*a != NULL) {
-//         tmp = plus_petit(*a);
-//         while (*a != NULL) {
-//             if ((*a)->data == tmp)
-//                 push_stack(a, b);
-//             else
-//                 rotate_stack(a);
-//         }
-//     }
-// }
-// void ft_sort(t_stack **a, t_stack **b)
-// {
-//     int tmp;
-
-//     while (*a != NULL)
-//     {
-//         tmp = plus_petit(*a);
-//         while (*a != NULL) {
-//             if ((*a)->data == tmp)
-//             {
-//                 pb(a, b);
-//                 break;
-//             }
-//             else
-//             {
-//                 ra(a ,0);
-//                 break; 
-//             }
-//         }
-//     }
-//     //   while (*b)
-// 	// 	{
-// 	// 		printf("%d\n",(*b)->data);
-// 	// 		(*b) = (*b)->next;
-// 	// 	}
-//         while (*b != NULL)
-//         {
-//            pa(b, a);
-//         }
-//         // while (*a)
-// 		// {
-// 		// 	printf("%d\n",(*a)->data);
-// 		// 	(*a) = (*a)->next;
-// 		// }
-// }

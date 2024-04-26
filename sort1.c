@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 15:17:27 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/25 22:30:07 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:05:30 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,3 +140,4 @@ int	move_100(int i_tab, int count, t_stack **a, t_stack **b)
 		ra(a, 0);
 	return (count);
 }
+

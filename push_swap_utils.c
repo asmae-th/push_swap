@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 13:32:04 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/25 19:33:52 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/26 10:44:35 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ int	ft_size_tab(char **ptr)
 
 void	ft_exit(void)
 {
-	write (1, "error4\n", 6);
-	exit (1);
+	write (2, "Error\n", 6);
+	exit (0);
 }

@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:49:38 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/25 19:41:40 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/26 09:57:26 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	rrb(t_stack **s1, int n)
 	tmp->next = NULL;
 	h->next = *s1;
 	*s1 = h;
-	if (n == 0)
+	if (n == 1)
 		write(1, "rrb\n", 4);
 }
 
