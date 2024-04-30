@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 20:32:24 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/26 20:32:27 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/30 10:59:56 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,44 @@ void	ft_sort_three(t_stack **a)
 		rra(a, 0);
 }
 
-void	ft_sort_five(t_stack **a, t_stack **b)
+void	ft_sort_4(t_stack **a, t_stack **b)
 {
 	while (size(a) > 3)
 	{
 		if ((*a)->data == plus_petit(*a))
-			pb(a, b);
+			pb(a, b, 0);
 		else
 			ra(a, 0);
 	}
 	ft_sort_three(a);
-	pa(b, a);
-	pa(b, a);
+	pa(b, a, 0);
+}
+
+void	ft_sort_five(t_stack **a, t_stack **b)
+{
+	int	i_min;
+	int	min;
+
+	while (size(a) > 3)
+	{
+		min = plus_petit(*a);
+		i_min = ft_cherche_i_max(a, min);
+		if (i_min <= 2)
+		{
+			if ((*a)->data == min)
+				pb(a, b, 0);
+			else
+				ra(a, 0);
+		}
+		else
+		{
+			if ((*a)->data == min)
+				pb(a, b, 0);
+			else
+				rra(a, 0);
+		}
+	}
+	ft_sort_three(a);
+	pa(b, a, 0);
+	pa(b, a, 0);
 }

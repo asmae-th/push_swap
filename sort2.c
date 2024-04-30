@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 13:26:42 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/26 11:05:35 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/30 11:01:32 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,24 +56,20 @@ void	ft_push_b_to_a(t_stack **a, t_stack **b, int size)
 	{
 		max = plus_grand(*b);
 		i_max = ft_cherche_i_max(b, max);
-		
 		while (i_max != 0)
 		{
 			mil = size / 2;
 			max = plus_grand(*b);
-			//printf("max = %d\n",max);
 			i_max = ft_cherche_i_max(b, max);
-			//printf("i_max = %d\n",i_max);
 			if (i_max <= mil && i_max > 0)
 				rb(b, 0);
-			if (i_max > mil)// && i_max > 0)
+			if (i_max > mil)
 				rrb(b, 1);
 		}
-		pa(b, a);
+		pa(b, a, 0);
 		size--;
 	}
 }
-
 
 void	ft_sort_500(t_stack **a, t_stack **b, int size)
 {
@@ -85,8 +81,8 @@ void	ft_sort_500(t_stack **a, t_stack **b, int size)
 	tab = ft_copy(a);
 	if (!tab)
 	{
-		return ;
 		free(tab);
+		return ;
 	}
 	ft_sort_tab(tab, size);
 	while (count < size)
@@ -97,17 +93,17 @@ void	ft_sort_500(t_stack **a, t_stack **b, int size)
 	ft_push_b_to_a(a, b, size);
 }
 
-int move_500(int i_tab, int count, t_stack **a, t_stack **b)
+int	move_500(int i_tab, int count, t_stack **a, t_stack **b)
 {
 	if (i_tab < count)
 	{
-		pb(a, b);
+		pb(a, b, 0);
 		rb(b, 0);
 		count++;
 	}
 	else if (i_tab <= count + 35)
 	{
-		pb(a, b);
+		pb(a, b, 0);
 		count++;
 	}
 	else

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 15:50:44 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/30 13:04:52 by atahtouh         ###   ########.fr       */
+/*   Created: 2024/04/27 15:10:17 by atahtouh          #+#    #+#             */
+/*   Updated: 2024/04/30 12:15:55 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	ft_free(t_stack *a)
 {
-	t_stack		*tmp;
+	t_stack	*tmp;
 
 	while (a)
 	{
@@ -45,22 +45,18 @@ void	ft_push_stack(t_stack **a, char **ptr)
 	}
 }
 
-void	ft_sort(t_stack **a, t_stack **b, int size)
+char	*ft_check_is_sort(t_stack *a)
 {
-	if (ft_check_is_sort1(*a) == 1)
-		exit (0);
-	if (size == 2)
-		ft_sort_too(*a);
-	if (size == 3)
-		ft_sort_three(a);
-	if (size == 4)
-		ft_sort_4(a, b);
-	if (size == 5)
-		ft_sort_five(a, b);
-	if (size > 5 && size <= 100)
-		ft_sort_100(a, b, size);
-	if (size > 100)
-		ft_sort_500(a, b, size);
+	while (a->next != NULL)
+	{
+		if (a->data > a->next->data)
+		{
+			return ("KO\n");
+			break ;
+		}
+		a = a->next;
+	}
+	return ("OK\n");
 }
 
 int	ft_check_vide(char **av, int ac)
@@ -70,7 +66,7 @@ int	ft_check_vide(char **av, int ac)
 	i = 1;
 	while (i < ac)
 	{
-		if (ft_strlen1(av[i]) == 0 || check_spce(av[i]) == 1)
+		if (ft_strlen(av[i]) == 0 || check_spce(av[i]) == 1)
 			return (1);
 		i++;
 	}
@@ -94,27 +90,9 @@ int	main(int ac, char *av[])
 			ft_exit();
 		ptr = ft_split(s, ' ');
 		ft_push_stack(&a, ptr);
-		ft_sort(&a, &b, size(&a));
+		ft_checker(&a, &b);
 	}
 	else
 		ft_exit();
 	return (0);
 }
-
-		// while (b)
-		// {
-		// 	printf("data = %d\n", b->data);
-		// 	b = b->next;
-		// }
-				// sz = ft_size_tab(ptr) - 1;
-		// while (sz >= 0)
-		// {
-		// 	nb = ft_atoi(ptr[sz]);
-		// 	if (nb > 2147483647 || nb < -2147483648)
-		// 		ft_exit();
-		// 	i = nb;
-		// 	if (ft_dup(&a, i) == 1)
-		// 		ft_exit();
-		// 	a = push(a, i);
-		// 	sz--;
-		// }

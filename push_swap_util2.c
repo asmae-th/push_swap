@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 01:16:52 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/25 19:32:37 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/28 10:26:40 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,16 @@ void	*ft_memcpy(void *dst, void *src, int n)
 	return (dst);
 }
 
-char	*ft_substr(char *s, int start, int len)
+char	*ft_substr1(char *s, int start, int len)
 {
 	char	*substr;
 
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
-		return (ft_strdup(""));
-	if (start + len > ft_strlen(s))
-		len = ft_strlen(s) - start;
+	if (start > ft_strlen1(s))
+		return (ft_strdup1(""));
+	if (start + len > ft_strlen1(s))
+		len = ft_strlen1(s) - start;
 	substr = malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);
@@ -98,7 +98,7 @@ char	**ft_split(char	*s, char c)
 			s++;
 		if (*s && *s != c)
 		{
-			ptr[j] = ft_substr(s, 0, ft_len(s, c));
+			ptr[j] = ft_substr1(s, 0, ft_len(s, c));
 			j++;
 		}
 		while (*s && *s != c)

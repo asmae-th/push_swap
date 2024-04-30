@@ -1,7 +1,16 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/atahtouh/Desktop/ps1'
+gcc -Wall -Wextra -Werror   -c -o programm.o programm.c
+gcc -Wall -Wextra -Werror   -c -o push_swap_check.o push_swap_check.c
+gcc -Wall -Wextra -Werror   -c -o sort.o sort.c
+gcc -Wall -Wextra -Werror   -c -o sort1.o sort1.c
+gcc -Wall -Wextra -Werror   -c -o sort2.o sort2.c
+gcc -Wall -Wextra -Werror   -c -o push_swap_util1.o push_swap_util1.c
+gcc -Wall -Wextra -Werror   -c -o push_swap_util2.o push_swap_util2.c
 gcc -Wall -Wextra -Werror   -c -o push_swap_utils.o push_swap_utils.c
-gcc -Wall -Wextra -Werror   -c -o push_swap.o push_swap.c
-ar rcs push_swap.a push_swap_utils.o push_swap.o
+gcc -Wall -Wextra -Werror   -c -o rules1.o rules1.c
+gcc -Wall -Wextra -Werror   -c -o rules2.o rules2.c
+gcc -Wall -Wextra -Werror   -c -o rules3.o rules3.c
+gcc -Wall -Wextra -Werror -o push_swap programm.o push_swap_check.o sort.o sort1.o sort2.o push_swap_util1.o push_swap_util2.o push_swap_utils.o rules1.o rules2.o rules3.o
 make: Leaving directory `/Users/atahtouh/Desktop/ps1'
  

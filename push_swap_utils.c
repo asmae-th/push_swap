@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 13:32:04 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/26 10:44:35 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/30 13:06:52 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,29 @@ t_stack	*push(t_stack *s, int v)
 	t_stack	*new;
 
 	new = (t_stack *)malloc(sizeof(t_stack));
+	if (!new)
+	{
+		ft_free(s);
+		return (NULL);
+	}
 	new->data = v;
 	new->next = s;
 	s = new;
 	return (s);
 }
 
-t_stack	*pop(t_stack *s)
+int	ft_check_is_sort1(t_stack *a)
 {
-	return ((s->next--));
+	while (a->next != NULL)
+	{
+		if (a->data > a->next->data)
+		{
+			return (0);
+			break ;
+		}
+		a = a->next;
+	}
+	return (1);
 }
 
 int	size(t_stack **s)
@@ -73,5 +87,5 @@ int	ft_size_tab(char **ptr)
 void	ft_exit(void)
 {
 	write (2, "Error\n", 6);
-	exit (0);
+	exit (1);
 }

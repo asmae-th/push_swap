@@ -6,13 +6,12 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:53:06 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/25 14:54:35 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/04/28 10:24:34 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// int check_num(char)
 int	ft_check_arg(int c, char **v)
 {
 	int	i;
@@ -44,8 +43,8 @@ char	*arg_join(int c, char **v)
 	i = 1;
 	while (i < c)
 	{
-		tmp = ft_strjoin(tmp, " ");
-		tmp = ft_strjoin(tmp, v[i]);
+		tmp = ft_strjoin1(tmp, " ");
+		tmp = ft_strjoin1(tmp, v[i]);
 		i++;
 	}
 	return (tmp);
