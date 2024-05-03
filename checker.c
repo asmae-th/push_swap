@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 15:10:17 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/30 12:15:55 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/05/01 21:12:18 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	ft_push_stack(t_stack **a, char **ptr)
 	sz = ft_size_tab(ptr) - 1;
 	while (sz >= 0)
 	{
+		if (ft_check_len_int(ptr[sz]) > 11)
+			ft_exit();
 		nb = ft_atoi(ptr[sz]);
 		if (nb > 2147483647 || nb < -2147483648)
 			ft_exit();
@@ -92,6 +94,8 @@ int	main(int ac, char *av[])
 		ft_push_stack(&a, ptr);
 		ft_checker(&a, &b);
 	}
+	else if (ac < 2)
+		exit(0);
 	else
 		ft_exit();
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:50:44 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/30 13:04:52 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/05/02 09:21:44 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	ft_push_stack(t_stack **a, char **ptr)
 	sz = ft_size_tab(ptr) - 1;
 	while (sz >= 0)
 	{
+		if (ft_check_len_int(ptr[sz]) > 11)
+			ft_exit();
 		nb = ft_atoi(ptr[sz]);
 		if (nb > 2147483647 || nb < -2147483648)
 			ft_exit();
@@ -96,25 +98,9 @@ int	main(int ac, char *av[])
 		ft_push_stack(&a, ptr);
 		ft_sort(&a, &b, size(&a));
 	}
+	else if (ac < 2)
+		exit(0);
 	else
 		ft_exit();
 	return (0);
 }
-
-		// while (b)
-		// {
-		// 	printf("data = %d\n", b->data);
-		// 	b = b->next;
-		// }
-				// sz = ft_size_tab(ptr) - 1;
-		// while (sz >= 0)
-		// {
-		// 	nb = ft_atoi(ptr[sz]);
-		// 	if (nb > 2147483647 || nb < -2147483648)
-		// 		ft_exit();
-		// 	i = nb;
-		// 	if (ft_dup(&a, i) == 1)
-		// 		ft_exit();
-		// 	a = push(a, i);
-		// 	sz--;
-		// }

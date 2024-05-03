@@ -6,37 +6,11 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 15:17:27 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/30 12:11:30 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/05/02 09:18:58 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// int *ft_copy(t_stack **a)
-// {
-//     t_stack *tmp;
-//     int *T;
-//     int i;
-//     int siz;
-//     tmp = *a;
-//     siz  = size(a);	
-//     i = 0;
-//     T = (int *)malloc(siz * sizeof(int));	
-//     while (tmp != NULL)
-//     {
-//         T[i] = tmp->data;
-//         i++;
-//         tmp = tmp->next;
-//     }
-//    // printf("siz1 %d\n",size_tab(T));
-//     	  i = 0;
-// 		while (i < size_tab(T))
-// 		{
-// 			printf("%d  \n",T[i]);
-// 			i++;
-// 		}
-//     return (T);
-// }
 
 int	*ft_copy(t_stack **a)
 {

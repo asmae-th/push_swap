@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:58:25 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/30 13:22:33 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/05/01 10:07:59 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,11 +106,7 @@ long long	ft_atoi(char *str)
 		tmp++;
 	}
 	while (str[i] != '\0' && str[i] >= 48 && str[i] <= 57)
-	{
 		reslt = reslt * 10 + str[i++] - '0';
-		if (reslt > 2147483648)
-			ft_exit();
-	}
 	if (str[i] != '\0' || (tmp == ft_strlen1(str)))
 		ft_exit();
 	return (reslt * sing);

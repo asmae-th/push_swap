@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:54:48 by atahtouh          #+#    #+#             */
-/*   Updated: 2024/04/30 13:05:51 by atahtouh         ###   ########.fr       */
+/*   Updated: 2024/05/01 09:40:56 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct t_stack
 }	t_stack;
 
 void		ft_free(t_stack *a);
+int			ft_check_len_int(char *str);
 void		ft_push_stack(t_stack **a, char **ptr);
 void		ft_sort(t_stack **a, t_stack **b, int size);
 int			ft_check_vide(char **av, int ac);
